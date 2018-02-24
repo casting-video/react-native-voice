@@ -62,6 +62,9 @@
 
     // Configure request so that results are returned before audio recording is finished
     self.recognitionRequest.shouldReportPartialResults = YES;
+    
+    // Dictation hint
+    self.recognitionRequest.taskHint = SFSpeechRecognitionTaskHintDictation;
 
     [self sendEventWithName:@"onSpeechStart" body:@true];
 
