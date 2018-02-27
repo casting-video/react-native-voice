@@ -23,6 +23,7 @@
 
     @try {
         // Setup audioEngine
+        [[AVAudioSession sharedInstance] setActive:YES error:nil];
         self.audioEngine = [[AVAudioEngine alloc] init];
 
         AVAudioInputNode* inputNode = self.audioEngine.inputNode;
@@ -169,6 +170,8 @@
     }
 
     self.recognitionRequest = nil;
+
+    [[AVAudioSession sharedInstance] setActive:NO withOptions:AVAudioSessionSetActiveOptionNotifyOthersOnDeactivation error:nil];
 }
 
 // Called when the availability of the given recognizer changes
