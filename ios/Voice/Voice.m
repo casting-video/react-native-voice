@@ -141,6 +141,7 @@
 
 - (void) sendResult:(NSDictionary*)error :(NSString*)bestTranscription :(NSArray*)transcriptions :(NSNumber*)isFinal {
     if (error != nil) {
+        NSLog(@"Speech recognizer error: %@", error);
         [self sendEventWithName:@"onSpeechError" body:@{@"error": error}];
     }
     if (bestTranscription != nil) {
