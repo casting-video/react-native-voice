@@ -14,11 +14,11 @@ repositories {
 }
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 30
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 26
+        minSdkVersion 21
+        targetSdkVersion 30
     }
     buildTypes {
         release {
